@@ -1,0 +1,21 @@
+OUT = message
+G = gcc
+MO = main.o
+MC = main.c
+MGO = msg.o
+MGC = msg.c
+SEM = ;
+DASH = -
+C = c
+O = o
+RM = rm
+ALL = *.o
+
+all: $(OUT)
+$(OUT): $(MO) $(MGO)
+	$(G) $(MO) $(MGO) $(DASH)$(O) $(OUT)$(SEM)
+	$(RM) $(ALL)$(SEM)
+$(MO): $(MC)
+	$(G) $(DASH)$(C) $(MC)
+$(MGO): $(MGC)
+	$(G) $(DASH)$(C) $(MGC)

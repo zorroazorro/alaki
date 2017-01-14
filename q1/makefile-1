@@ -1,0 +1,8 @@
+all: message
+message: main.o msg.o
+	gcc main.o msg.o -o message;
+	rm *.o;
+main.o: main.c
+	gcc -c main.c
+msg.o: msg.c
+	gcc -c msg.c
